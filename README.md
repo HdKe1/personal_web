@@ -1,2 +1,3 @@
-# personal_web
-just building a personal website
+# web_practice
+
+just learning html
