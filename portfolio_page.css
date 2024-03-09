@@ -2,6 +2,9 @@ body {
     font-family: 'Baskervville', serif;
     color: linen;
     background-color: rgb(32, 55, 78);
+    margin:0;
+    padding: 0;
+
   }
 
 
@@ -13,4 +16,24 @@ body {
 
   .hero-subtitle{
     text-align: center;
+  }
+  nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
   }
