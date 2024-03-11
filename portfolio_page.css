@@ -1,3 +1,12 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
 body {
     font-family: 'Baskervville', serif;
     color: linen;
@@ -12,16 +21,17 @@ body {
     font-family: 'Anton', sans-serif;
     color: Red;
     text-align: center;
+    padding-top: 5%;
   }  
 
   .hero-subtitle{
     text-align: center;
   }
   nav {
-    background-color: #333;
+    background-color: black;
     color: #fff;
     padding: 10px;
-    position: fixed;
+    position: relative;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -31,9 +41,16 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    text-align: right;
+    
   }
   
   nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 10px;
+    
+  }
+  nav ul li a{
+    color:red;
+    margin: 10px;
   }
