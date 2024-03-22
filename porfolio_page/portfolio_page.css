@@ -422,3 +422,66 @@ span{
   font-size: 1rem;
   padding-top: .5rem;
 }
+
+
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  min-height: auto;
+  padding-bottom: 5rem;
+}
+
+.projects-content{
+  padding-left: 5rem;
+  padding-right: 5rem;
+  
+}
+
+
+.projects-content .content{
+  position: relative;
+  padding: 1.5rem;
+  border: .2rem solid var(--main-color);
+  border-radius: .6rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  
+}
+
+.projects-content .content::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--second-bg-color);
+  z-index: -1;
+  transition: .5s;
+
+}
+
+.projects-content .content:hover:before{
+  
+  width: 100%;
+  
+  
+}
+
+.projects-row{
+  flex: 1 1 40rem;
+}
+
+.projects-content .content h3 {
+  font-size: 1.2rem;
+  padding-top: 2rem;
+
+}
+
+.projects-content .content p {
+  font-size: 1rem;
+  padding-top: .5rem;
+}
+
