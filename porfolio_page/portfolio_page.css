@@ -30,6 +30,11 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  transition: .3s;
+}
+
+.header.sticky{
+  background: var(--bg-color);
 }
 
 .logo{
@@ -85,6 +90,8 @@ body {
   font-weight: 700;
   line-height: 1.2;
 }
+
+
 .home-content h1::before{
   content: '';
   position: absolute;
