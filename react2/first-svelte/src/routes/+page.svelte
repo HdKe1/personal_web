@@ -1,4 +1,6 @@
 <script>
+  import Nested from "./firstnest.svelte";
+
   let count = 0;
 
   function increment() {
@@ -15,3 +17,4 @@
   Pressed{count}
   {count === 1 ? "time" : "times"}
 </button>
+<Nested answer={42} />
