@@ -2,7 +2,6 @@
   let count = 0;
 
   function increment() {
-    // event handler code goes here
     count += 1;
   }
 </script>
