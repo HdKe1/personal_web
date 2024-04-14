@@ -18,3 +18,7 @@
   {count === 1 ? "time" : "times"}
 </button>
 <Nested answer={42} />
+
+{#if count > 10}
+  <p>{count} is greater than 10</p>
+{/if}
