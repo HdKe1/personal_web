@@ -1,7 +1,18 @@
 <script>
-  let toDoList = [{ content: "", editing: true, checked: false }];
+  let toDoList = [];
+  let textInput = "";
   function setEditing(i, isEditing) {
     toDoList[i].editing = isEditing;
+  }
+  function deleteToDo(i) {
+    toDoList.splice(i, 1);
+    toDoList = toDoList;
+  }
+  function addToDo() {
+    toDoList = [
+      ...toDoList,
+      { content: textInput, editing: false, checked: false },
+    ];
   }
 </script>
 
@@ -16,8 +27,8 @@
   <h2>To do list</h2>
   <p>Enter your to do list here</p>
   <div style="display: flex;">
-    <input type="text" />
-    <button style="width: 200px; ">Add</button>
+    <input type="text" bind:value={textInput} />
+    <button style="width: 200px; " on:click={addToDo}>Add</button>
   </div>
 </div>
 
@@ -37,7 +48,7 @@
       {:else}
         <button on:click={() => setEditing(i, true)}>Edit</button>
       {/if}
-      <button style=" width: 100px;">Delete</button>
+      <button on:click={() => deleteToDo(i)}>Delete</button>
     </div>
   </div>
 {/each}
