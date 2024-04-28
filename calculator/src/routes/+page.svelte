@@ -1,3 +1,10 @@
+<script>
+  let toDoList = [{ content: "", editing: true, checked: false }];
+  function setEditing(i, isEditing) {
+    toDoList[i].editing = isEditing;
+  }
+</script>
+
 <svelte:head>
   <link
     rel="stylesheet"
@@ -14,13 +21,23 @@
   </div>
 </div>
 
-<div
-  style="display: flex; align-items: baseline; width: 700px; margin: 0 auto;"
->
-  <input type="checkbox" />
-  <h4 style="flex-grow: 1">I dont know</h4>
-  <div style="display: flex">
-    <button style=" width: 100px;">Edit</button>
-    <button style=" width: 100px;">Delete</button>
+{#each toDoList as toDo, i}
+  <div
+    style="display: flex; align-items: baseline; width: 700px; margin: 0 auto;"
+  >
+    {#if toDo.editing}
+      <input type="text" bind:value={toDo.content} />
+    {:else}
+      <input type="checkbox" bind:checked={toDo.checked} />
+      <h4 style="flex-grow: 1">{toDo.content}</h4>
+    {/if}
+    <div style="display: flex">
+      {#if toDo.editing}
+        <button on:click={() => setEditing(i, false)}>Save</button>
+      {:else}
+        <button on:click={() => setEditing(i, true)}>Edit</button>
+      {/if}
+      <button style=" width: 100px;">Delete</button>
+    </div>
   </div>
-</div>
+{/each}
