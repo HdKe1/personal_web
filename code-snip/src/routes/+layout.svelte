@@ -26,7 +26,7 @@
 <AppShell>
 	<svelte:fragment slot="header">
 		<AppBar>
-			<h1 class="text-left">Hello there</h1>
+			<h1 class="text-left text-4xl">Hello there</h1>
 		</AppBar>
 	</svelte:fragment>
 	<slot />
