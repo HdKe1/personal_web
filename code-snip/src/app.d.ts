@@ -14,3 +14,10 @@ interface CodeSnippetInput{
 	language: String
 	code: String
 }
+
+interface CodeSnippet {
+	title: String
+	language: String
+	code: String
+	favorite: boolean
+}
