@@ -7,3 +7,10 @@ declare namespace App {
 	// interface Error {}
 	// interface Platform {}
 }
+
+
+interface CodeSnippetInput{
+	title: String
+	language: String
+	code: String
+}
