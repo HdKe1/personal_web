@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CodeSnippetCard from '../CodeSnippetCard.svelte';
-
+	import { snippetStore } from '../SnippetStore';
 	let formData: CodeSnippetInput = {
 		title: '',
 		language: 'html',
