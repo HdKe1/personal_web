@@ -1,11 +1,27 @@
 <script lang="ts">
 	import CodeSnippetCard from '../CodeSnippetCard.svelte';
 	import { snippetStore } from '../SnippetStore';
+
 	let formData: CodeSnippetInput = {
 		title: '',
 		language: 'html',
 		code: ''
 	};
+
+	snippetStore.set([
+		{
+			title: 'Adi code snippet',
+			language: 'html',
+			code: '<div> This is my first cool web </div>',
+			favorite: false
+		},
+		{
+			title: 'Adi code snippet',
+			language: 'html',
+			code: '<div> This is my first cool web </div>',
+			favorite: false
+		}
+	]);
 </script>
 
 <div class="flex justify-center">
@@ -42,6 +58,8 @@
 		<div class="text-center py-6">
 			<h1 class="text-3xl">My Code snippets</h1>
 		</div>
-		<CodeSnippetCard />
+		{#each $snippetStore as snippet, index}
+			<CodeSnippetCard />
+		{/each}
 	</div>
 </div>
