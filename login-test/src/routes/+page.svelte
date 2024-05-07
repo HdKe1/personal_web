@@ -1,6 +1,15 @@
+<script lang="ts">
+  import { signIn, signOut } from "@auth/sveltekit/client";
+  import { page } from "$app/stores";
+</script>
+
 <div class="p-24">
-  <h1>Welcome to SvelteKit</h1>
-  <p>
-    Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-  </p>
+  {#if $page.data.session}
+    <h1>You are logged in</h1>
+  {:else}
+    <h1>You are not logged in</h1>
+    <button class="bg-blue-500 py-1 px-2 rounded text-white font-bold"
+      >Sign in with github</button
+    >
+  {/if}
 </div>
