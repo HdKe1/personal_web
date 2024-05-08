@@ -14,6 +14,11 @@
       />
     {/if}
     <p>Singed in as {$page.data.session.user?.name}</p>
+    <button
+      on:click={() => signOut()}
+      class="bg-blue-500 py-1 px-2 rounded text-white font-bold"
+      >Sign out
+    </button>
   {:else}
     <h1>You are not logged in</h1>
     <button
