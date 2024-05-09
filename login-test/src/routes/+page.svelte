@@ -9,7 +9,7 @@
     {#if $page.data.session.user?.image}
       <img
         src={$page.data.session.user.image}
-        alt="user image"
+        alt="user profile pic"
         class="w-12 h-12"
       />
     {/if}
