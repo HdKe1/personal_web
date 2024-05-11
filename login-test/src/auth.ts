@@ -9,7 +9,16 @@ export const {handle} = SvelteKitAuth(
             GitHub({ clientId: GITHUB_ID, clientSecret: GITHUB_SECRET})
         ],
         callbacks: {
-            async jwt({token,account})
+            async jwt({token,account}){
+                if(account){
+                    token.accessToken = account.access_token
+                }
+                return token
+            },
+            async session({ session,token,user}){
+                session.access_token = token.accessToken
+                return session
+            }
         }
     }
 )

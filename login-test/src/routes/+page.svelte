@@ -19,6 +19,11 @@
       class="bg-blue-500 py-1 px-2 rounded text-white font-bold"
       >Sign out
     </button>
+    <button
+      on:click={() => getFollowerList()}
+      class="bg-blue-800 py-1 px-2 rounded text-white font-bold"
+      >Get Follower list
+    </button>
   {:else}
     <h1>You are not logged in</h1>
     <button
