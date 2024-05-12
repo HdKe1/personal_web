@@ -1,6 +1,26 @@
 <script lang="ts">
   import { signIn, signOut } from "@auth/sveltekit/client";
   import { page } from "$app/stores";
+
+  let followerList: any = [];
+
+  async function getFollowerList() {
+    await fetch("https://api.github.com/users/followers", {
+      headers: {
+        //@ts-ignore
+        Authorization: "Bearer " + $page.data.session?.access_token,
+        "X-Github-Api-Version": "2022-11-28",
+      },
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((data) => {
+        console.log(data);
+        followerList = data;
+      });
+    console.log(followerList);
+  }
 </script>
 
 <div class="p-24">
